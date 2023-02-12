@@ -20,14 +20,14 @@ html {
 }
 
 body {
-    margin:0;
-    font-family: "Exo", "Courier New", monospace !important;
-    background: black !important;
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
+  margin:0;
+  font-family: "Exo", "Courier New", monospace !important;
+  background: black !important;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
 }
 
 h1,
@@ -36,16 +36,18 @@ h3,
 h4,
 h5,
 h6 {   
-  color: #daa520;
+  
   font-weight:600 !important;
   letter-spacing:0.1rem;
 }
 
 h1{
+  color: white;
   font-size: 2.8rem !important;
 }
 
 h3 { 
+  color: #daa520;
   font-size: 1.8rem !important;
 }
 

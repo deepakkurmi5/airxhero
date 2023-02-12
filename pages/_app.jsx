@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import { publicProvider } from "wagmi/providers/public";
-import { ChakraProvider } from "@chakra-ui/react";
 import {CryptoProvider} from "../src/contexts/CryptoContext"
 import {
   createClient,
@@ -25,13 +24,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <ModeProvider>
       <WagmiConfig client={client}>
-        <ChakraProvider>
-          <CryptoProvider>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </CryptoProvider>
-        </ChakraProvider>
+        <CryptoProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </CryptoProvider>
       </WagmiConfig>
     </ModeProvider>
   );

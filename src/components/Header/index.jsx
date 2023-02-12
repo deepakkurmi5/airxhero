@@ -1,22 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import HeaderWrapper from "../../style/header.style";
-import { Button } from "@chakra-ui/react";
 import { useCrypto } from "../../contexts/CryptoContext";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-} from "@chakra-ui/react";
+import WalletModel from "../../models/walletModel";
 
 const Header = () => {
   const { handleAuth ,walletConnectHandleAuth ,coinBaseHandleAuth,
-    address,connectWallet,disconnectAsync,onOpen,isOpen,onClose}  =  useCrypto();
-    
+    address,connectWallet,disconnectAsync,isModel,setIsModel}  =  useCrypto();
+
   return (
     <>
     <HeaderWrapper>
@@ -32,7 +23,7 @@ const Header = () => {
                 <li className="nav-item">
                 {!connectWallet ? (
                   <div className="mint">
-                    <button onClick={onOpen}>
+                    <button onClick={() => setIsModel(true)}>
                       Connect wallet
                     </button>
                   </div>
@@ -50,49 +41,15 @@ const Header = () => {
         </div>
       </div>
     </HeaderWrapper>
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>Select connection method</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              width: "100%",
-              height: "150px",
-            }}
-          >
-            <Button colorScheme="teal" variant="outline" onClick={handleAuth}>
-              Metamask
-            </Button>
-            <Button
-              colorScheme="teal"
-              variant="outline"
-              onClick={walletConnectHandleAuth}
-            >
-              Wallet Connect
-            </Button>
-            <Button
-              colorScheme="teal"
-              variant="outline"
-              onClick={coinBaseHandleAuth}
-            >
-              Coinbase
-            </Button>
-          </div>
-        </ModalBody>
 
-        <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
-            Close
-          </Button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
+    {isModel && 
+      <WalletModel 
+        isOpen={isModel} 
+        isClose={() => setIsModel(false)} 
+        handleAuth={handleAuth}
+        walletConnectHandleAuth={walletConnectHandleAuth}
+        coinBaseHandleAuth={coinBaseHandleAuth} 
+      />}
   </>
   );
 };

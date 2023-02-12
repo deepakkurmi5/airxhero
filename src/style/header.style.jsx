@@ -51,7 +51,7 @@ const HeaderWrapper = styled.div`
 
         .navbar-brand {
           img {
-            height: 3.5rem;
+            height: 3.7rem;
             width: auto;
             margin-left: 10px;
           }
@@ -61,8 +61,9 @@ const HeaderWrapper = styled.div`
           li {
           .mint{
             button {
-              padding: 0.5rem 1.3rem;
+              padding: 0.6rem 1.3rem;
               font-size: 1rem;
+              border-radius:4px;
             } 
           }
         }

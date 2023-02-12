@@ -4,11 +4,11 @@ import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 import { mainnet } from "wagmi/chains";
-import { useDisclosure } from "@chakra-ui/react";
+
 export const CryptoContext = createContext();
 
 export const CryptoProvider = ({ children }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isModel, setIsModel] = useState(false); 
   const [connectWallet, setConnect] = useState(false);
   const { connectAsync } = useConnect();
   const { disconnectAsync } = useDisconnect();
@@ -25,7 +25,7 @@ export const CryptoProvider = ({ children }) => {
       });
 
       setConnect(true)
-      onClose();
+      setIsModel(false);
 
     } catch (err) {
       console.log(err)
@@ -45,7 +45,7 @@ export const CryptoProvider = ({ children }) => {
       });
   
       setConnect(true)
-      onClose();
+     setIsModel(false);
     } catch (err) {
       console.log(err)
     }
@@ -67,7 +67,7 @@ export const CryptoProvider = ({ children }) => {
         }),
       });
       setConnect(true)
-      onClose();
+     setIsModel(false);
     } catch (err) {
       console.log(err)
     }
@@ -91,9 +91,8 @@ export const CryptoProvider = ({ children }) => {
         address,
         connectWallet,
         disconnectAsync,
-        onOpen,
-        isOpen,
-        onClose
+        setIsModel,
+        isModel
       }}
     >
       {children}

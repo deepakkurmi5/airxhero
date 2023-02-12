@@ -6,12 +6,13 @@ import Header from "../Header";
 const LayoutWrapper = styled.div`
   display:flex;
   justify-content:center;
-    .bgImg {
-      position: absolute;
-      background-repeat: no-repeat;
-      background-position:  center center;
-      background-size: 100%;  
-    }
+  
+  .bgImg {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position:  center center;
+    background-size: 100%;  
+  }
 `;
 
 const Layout = ({ children }) => {

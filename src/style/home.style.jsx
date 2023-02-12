@@ -3,10 +3,14 @@ import styled from "styled-components";
 const HomeWrapper = styled.div`
    .home {
 
-
       .title {
-         p {
-            font-size: 1.1rem;
+         p ,span{
+            font-size: 1.4rem;
+         }
+
+         span {
+            color: #daa520;
+            font-weight:600;
          }
       } 
 

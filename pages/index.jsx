@@ -53,12 +53,12 @@ function HomePage() {
               <div className="title text-center">
                 <h1>HERO</h1>
                 <p>First AI HERO NFT Collection</p>
-                <p>Mint Starts at 0.05ETH</p>
+                <span>Mint Starts at 0.05ETH</span>
               </div>
             </div>
           </div>
           <div className="row d-flex justify-content-center mt-4">
-            <div className="col-lg-4 col-md-6 col-sm-10 col-12 about">
+            <div className="col-lg-4 col-12 about order-lg-0 order-1 mt-lg-0 mt-3">
               <div className="about_details text-center">
                 <h3>About HERO</h3>
                 <p>AIR HEROs are the next generation of Metaverse
@@ -68,7 +68,7 @@ function HomePage() {
                 </p>              
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-10 col-12 gallery">
+            <div className="col-lg-4  col-12 gallery order-lg-1 order-0">
               <div>
                 <Slide {...settings}>
                   {AavtarRegistry.map((item) => {
@@ -84,7 +84,7 @@ function HomePage() {
                 </Slide>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-10 col-12 bennifts">
+            <div className="col-lg-4 col-12 bennifts order-lg-2 order-2 mt-lg-0 mt-3">
               <div className="about_bennifts text-center">
                   <h3>HERO Bennifts</h3>
                   <p>Get a chance to finally own cool looking avatars that you can use on your socials.

@@ -9,7 +9,6 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@chakra-ui/react": "^2.4.4",
         "@emotion/react": "^11",
         "@emotion/styled": "^11",
         "@moralisweb3/next": "^2.9.0",
